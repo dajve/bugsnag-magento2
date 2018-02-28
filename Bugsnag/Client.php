@@ -30,6 +30,8 @@ class Client extends BugSnag_Client
         $this->config = $config->getConfiguration();
         if($this->config) {
             parent::__construct($this->config, null, parent::makeGuzzle());
+            
+            \Bugsnag\Handler::register($this);
         }
     }
 
